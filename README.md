@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# 🥭 Wow Pickles – Homemade Pickle E-Commerce Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Wow Pickles is a frontend e-commerce web application built using **React** that allows users to browse, select, and purchase authentic homemade pickles prepared with mom’s love ❤️.
 
-## Available Scripts
+This project focuses on a clean UI, smooth navigation, and a complete **Buy Now → Payment → Order Success** flow.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🏠 **Home Page**
+  - Category-based navigation (Veg, Non-Veg, Karam Podis)
+  - Attractive product cards with images
+  - “View Products” redirects to filtered catalog
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 📦 **Catalog Page**
+  - Displays all products
+  - Category filter (Veg / Non-Veg / Podis)
+  - Uniform product cards with images and prices
 
-### `npm test`
+- 🔍 **Product Details Page**
+  - Detailed view of selected product
+  - Quantity selection (250g / 500g / 1kg)
+  - Dynamic price update
+  - Buy Now option
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 💳 **Payment Page**
+  - Multiple payment methods:
+    - UPI
+    - Card
+    - Cash on Delivery (+₹10 charge)
+  - Dynamic total amount calculation
+  - Conditional UI based on selected payment method
 
-### `npm run build`
+- ✅ **Order Success Page**
+  - Order confirmation message
+  - Auto-generated Order ID
+  - “Continue Shopping” option
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend:** React.js  
+- **Routing:** React Router DOM  
+- **State Management:** React Hooks (`useState`, `useLocation`, `useNavigate`)  
+- **Styling:** Inline CSS  
+- **Version Control:** Git & GitHub  
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📂 Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+src/
+│── components/
+│ ├── Header.js
+│ ├── Footer.js
+│
+│── pages/
+│ ├── Home.js
+│ ├── Catalog.js
+│ ├── ProductDetails.js
+│ ├── Payment.js
+│ ├── OrderSuccess.js
+│
+│── assets/
+│ ├── products/
+│
+│── App.js
+│── index.js

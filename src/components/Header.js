@@ -11,54 +11,76 @@ function Header() {
 
   const hoverPink = (e) => (e.target.style.color = "#ff5ca8");
   const hoverOut = (e) => (e.target.style.color = "black");
+  
 
   return (
     <div>
-      {/* 1️⃣ Top Announcement Bar */}
+      {/* 🔹 Top Announcement Bar */}
       <div
         style={{
           backgroundColor: "#e0f7f7",
           padding: "10px",
           textAlign: "center",
           fontSize: "14px",
-          position: "relative",
         }}
       >
-        Wow Pickles Served with Mom's Love
-        <span
-          style={{
-            position: "absolute",
-            right: "20px",
-            cursor: "pointer",
-            fontWeight: "bold",
-          }}
-        >
-          ✕
-        </span>
+        Wow Pickles – Served with Mom’s Love 💖
       </div>
 
-      {/* 2️⃣ Contact Bar */}
+      {/* 🔹 Contact + Icons Bar */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "center",
           padding: "12px 40px",
-          fontSize: "14px",
           borderBottom: "1px solid #eee",
         }}
       >
-        <div>
-          ✉️ wowpickles@gmail.com &nbsp;&nbsp; 📞 +91 9493615914
+        {/* Left */}
+        <div style={{ fontSize: "14px" }}>
+          ✉️ wowpickles@gmail.com &nbsp; 📞 +91 9493615914
         </div>
-        <div>INR ⌄</div>
+
+        {/* Right Icons */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+            fontSize: "16px",
+          }}
+        >
+  
+
+          <Link
+            to="/signin"
+            style={menuStyle}
+            onMouseEnter={hoverPink}
+            onMouseLeave={hoverOut}
+          >
+            Sign In
+          </Link>
+
+          <Link
+            to="/admin"
+            style={menuStyle}
+            onMouseEnter={hoverPink}
+            onMouseLeave={hoverOut}
+          >
+            Admin
+          </Link>
+          
+
+        </div>
       </div>
 
-      {/* 3️⃣ Logo */}
+      {/* 🔹 Logo */}
       <div style={{ textAlign: "center", padding: "20px 0" }}>
         <img src={logo} alt="Wow Pickles" style={{ height: "110px" }} />
       </div>
 
-      {/* 4️⃣ Menu Bar (hover + routing) */}
+      {/* 🔹 Menu Bar */}
       <div
         style={{
           display: "flex",
@@ -87,21 +109,7 @@ function Header() {
           Catalog
         </Link>
 
-        <span
-          style={menuStyle}
-          onMouseEnter={hoverPink}
-          onMouseLeave={hoverOut}
-        >
-          Collections ⌄
-        </span>
-
-        <span
-          style={menuStyle}
-          onMouseEnter={hoverPink}
-          onMouseLeave={hoverOut}
-        >
-          Contact
-        </span>
+        
 
         <Link
           to="/about"
