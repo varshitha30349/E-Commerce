@@ -1,62 +1,69 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function OrderSuccess() {
   const navigate = useNavigate();
+const orderId = "WOW" + Math.floor(100000 + Math.random() * 900000);
 
-  const orderId = "WOW" + Math.floor(100000 + Math.random() * 900000);
+  // Calculate delivery dates
+  const today = new Date();
+  const minDate = new Date(today);
+  minDate.setDate(today.getDate() + 3);
+
+  const maxDate = new Date(today);
+  maxDate.setDate(today.getDate() + 5);
+
+  const formatDate = (date) =>
+    date.toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
 
   return (
     <div
       style={{
-        minHeight: "80vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#f9f9f9",
+        padding: "80px",
+        textAlign: "center",
       }}
     >
-      <div
-        style={{
-          backgroundColor: "white",
-          padding: "40px 60px",
-          borderRadius: "20px",
-          textAlign: "center",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-        }}
-      >
-        <h1 style={{ color: "#2e7d32", marginBottom: "10px" }}>
-          ✅ Order Placed Successfully
-        </h1>
+      <h1 style={{ color: "#2e7d32", fontSize: "40px" }}>
+        🎉 Order Placed Successfully!
+      </h1>
 
-        <p style={{ fontSize: "18px", marginBottom: "10px" }}>
-          Thank you for ordering from <strong>Wow Pickles</strong>
-        </p>
-
-        <p style={{ marginBottom: "20px", color: "#555" }}>
+      <p style={{ fontSize: "18px", marginTop: "15px" }}>
+        Thank you for ordering from <strong>Wow Pickles</strong> ❤️
+      </p>
+      <p style={{ marginBottom: "20px", color: "#555" }}>
           Your Order ID:
           <br />
           <strong>{orderId}</strong>
         </p>
 
-        <p style={{ color: "#777", marginBottom: "30px" }}>
-          We will deliver your order with mom’s love ❤️
-        </p>
+      <p style={{ marginTop: "20px", fontSize: "17px" }}>
+        <strong>Estimated Delivery:</strong>{" "}
+        {formatDate(minDate)} – {formatDate(maxDate)}
+      </p>
 
-        <button
-          onClick={() => navigate("/")}
-          style={{
-            padding: "12px 28px",
-            backgroundColor: "#ff5ca8",
-            color: "white",
-            border: "none",
-            borderRadius: "25px",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
-        >
-          Continue Shopping
-        </button>
-      </div>
+      <p style={{ marginTop: "10px", color: "#555" }}>
+        Your delicious homemade pickles are on the way!
+      </p>
+
+      <button
+        onClick={() => navigate("/")}
+        style={{
+          marginTop: "35px",
+          padding: "12px 30px",
+          backgroundColor: "#ff5ca8",
+          color: "white",
+          border: "none",
+          borderRadius: "25px",
+          fontSize: "16px",
+          cursor: "pointer",
+        }}
+      >
+        Back to Home
+      </button>
     </div>
   );
 }

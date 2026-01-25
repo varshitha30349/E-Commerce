@@ -1,23 +1,16 @@
-import { useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ProductDetails() {
+  const navigate = useNavigate();
   const { state } = useLocation();
-const navigate = useNavigate();
 
-  // 🔹 Hooks MUST be on top
+  // ✅ hooks at top
   const [qty, setQty] = useState("250g");
-  const { addToCart } = useContext(CartContext);
 
-  // 🔹 Safety check
+  // ✅ safety check
   if (!state) {
-    return (
-      <h2 style={{ textAlign: "center", marginTop: "50px" }}>
-        Product not found
-      </h2>
-    );
+    return <h2 style={{ padding: "40px" }}>Product not found</h2>;
   }
 
   const { name, image, prices } = state;
@@ -30,7 +23,7 @@ const navigate = useNavigate();
         gap: "60px",
       }}
     >
-      {/* 🖼️ Product Image */}
+      {/* Product Image */}
       <img
         src={image}
         alt={name}
@@ -42,7 +35,7 @@ const navigate = useNavigate();
         }}
       />
 
-      {/* 📦 Product Details */}
+      {/* Product Info */}
       <div>
         <h1>{name}</h1>
 
@@ -73,34 +66,33 @@ const navigate = useNavigate();
           authentic taste, served with mom’s love ❤️
         </p>
 
-       
+        {/* BUY NOW */}
         <button
-  onClick={() => {
-    navigate("/payment", {
-      state: {
-        product: {
-          name,
-          image,
-          qty,
-          price: prices[qty],
-        },
-      },
-    });
-  }}
-  style={{
-    marginTop: "12px",
-    padding: "12px 30px",
-    backgroundColor: "#2e7d32",
-    color: "white",
-    border: "none",
-    borderRadius: "25px",
-    fontSize: "16px",
-    cursor: "pointer",
-  }}
->
-  Buy Now
-</button>
-
+          onClick={() =>
+            navigate("/address", {
+              state: {
+                product: {
+                  name,
+                  image,
+                  qty,
+                  price: prices[qty],
+                },
+              },
+            })
+          }
+          style={{
+            marginTop: "20px",
+            padding: "12px 30px",
+            backgroundColor: "#ff5ca8",
+            color: "white",
+            border: "none",
+            borderRadius: "25px",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+        >
+          Buy Now
+        </button>
       </div>
     </div>
   );

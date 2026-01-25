@@ -11,7 +11,6 @@ function Header() {
 
   const hoverPink = (e) => (e.target.style.color = "#ff5ca8");
   const hoverOut = (e) => (e.target.style.color = "black");
-  
 
   return (
     <div>
@@ -27,7 +26,7 @@ function Header() {
         Wow Pickles – Served with Mom’s Love 💖
       </div>
 
-      {/* 🔹 Contact + Icons Bar */}
+      {/* 🔹 Contact + Right Links */}
       <div
         style={{
           display: "flex",
@@ -42,26 +41,19 @@ function Header() {
           ✉️ wowpickles@gmail.com &nbsp; 📞 +91 9493615914
         </div>
 
-        {/* Right Icons */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            fontSize: "16px",
-          }}
-        >
-  
-
+        {/* Right */}
+        <div style={{ display: "flex", gap: "20px", fontSize: "16px" }}>
+          {/* Login / Signup */}
           <Link
-            to="/signin"
+            to="/auth"
             style={menuStyle}
             onMouseEnter={hoverPink}
             onMouseLeave={hoverOut}
           >
-            Sign In
+            Login / Sign Up
           </Link>
 
+          {/* Admin */}
           <Link
             to="/admin"
             style={menuStyle}
@@ -70,8 +62,6 @@ function Header() {
           >
             Admin
           </Link>
-          
-
         </div>
       </div>
 
@@ -80,7 +70,7 @@ function Header() {
         <img src={logo} alt="Wow Pickles" style={{ height: "110px" }} />
       </div>
 
-      {/* 🔹 Menu Bar */}
+      {/* 🔹 Menu */}
       <div
         style={{
           display: "flex",
@@ -91,32 +81,15 @@ function Header() {
           borderBottom: "1px solid #eee",
         }}
       >
-        <Link
-          to="/"
-          style={menuStyle}
-          onMouseEnter={hoverPink}
-          onMouseLeave={hoverOut}
-        >
+        <Link to="/" style={menuStyle} onMouseEnter={hoverPink} onMouseLeave={hoverOut}>
           Home
         </Link>
 
-        <Link
-          to="/catalog"
-          style={menuStyle}
-          onMouseEnter={hoverPink}
-          onMouseLeave={hoverOut}
-        >
+        <Link to="/catalog" style={menuStyle} onMouseEnter={hoverPink} onMouseLeave={hoverOut}>
           Catalog
         </Link>
 
-        
-
-        <Link
-          to="/about"
-          style={menuStyle}
-          onMouseEnter={hoverPink}
-          onMouseLeave={hoverOut}
-        >
+        <Link to="/about" style={menuStyle} onMouseEnter={hoverPink} onMouseLeave={hoverOut}>
           About Us
         </Link>
       </div>
